@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إنارة ذكية - صفحة هبوط</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body {
+    background-color: #f7f7f7;
+    color: #121212;
+    font-family: sans-serif;
+  }
+  .transition-all {
+    transition: all 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  details summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+  details[open] summary::after {
+    content: "▲";
+    float: left;
+  }
+  details summary::after {
+    content: "▼";
+    float: left;
+  }
+  .customer-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  .product-img {
+    width: 100%;
+    max-width: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container mx-auto px-4">
+
+<header class="py-6 text-center">
+  <h1 class="text-5xl font-bold mb-2">إنارة ذكية</h1>
+  <p class="text-lg text-gray-700">أفضل حلول الإضاءة لمنزلك أو مكتبك بثلاثة مقاسات مختلفة.</p>
+</header>
+
+<!-- اختيار المقاس -->
+<section class="bg-white p-6 rounded shadow mb-8">
+  <h2 class="text-3xl font-semibold mb-4">اختر المقاس</h2>
+  <div class="flex gap-4 mb-6 flex-wrap">
+    <button class="size-btn flex-1 p-4 border border-gray-300 rounded card-hover transition-all" data-size="صغير">صغير</button>
+    <button class="size-btn flex-1 p-4 border border-gray-300 rounded card-hover transition-all" data-size="متوسط">متوسط</button>
+    <button class="size-btn flex-1 p-4 border border-gray-300 rounded card-hover transition-all" data-size="كبير">كبير</button>
+  </div>
+  <p class="selected-size mb-4">المقاس المحدد: <span id="sizeDisplay">صغير</span></p>
+  <div class="flex gap-4 flex-wrap justify-center">
+    <img src="1.jpeg" alt="منتج 1" class="product-img">
+    <img src="2.jpeg" alt="منتج 2" class="product-img">
+    <img src="3.jpeg" alt="منتج 3" class="product-img">
+    <img src="4.jpeg" alt="منتج 4" class="product-img">
+  </div>
+</section>
+
+<!-- نموذج الطلب -->
+<section class="bg-white p-6 rounded shadow mb-8">
+  <h2 class="text-2xl font-semibold mb-4">أرسل طلبك الآن</h2>
+  <form id="orderForm" class="space-y-4">
+    <input type="text" name="name" placeholder="الاسم" required class="duration-300 w-full border border-gray-300 rounded p-2 transition-all">
+    <input type="tel" name="phone" placeholder="رقم الهاتف" required class="duration-300 w-full border border-gray-300 rounded p-2 transition-all text-right" dir="rtl">
+    <input type="text" name="city" placeholder="المدينة" required class="duration-300 w-full border border-gray-300 rounded p-2 transition-all">
+    <textarea name="details" placeholder="وصف الطلب" rows="3" required class="duration-300 w-full border border-gray-300 rounded p-2 transition-all"></textarea>
+    <button type="submit" class="duration-300 w-full bg-blue-600 text-white p-3 rounded font-semibold hover:bg-blue-700 transition-all">إرسال الطلب</button>
+  </form>
+  <button id="whatsappBtn" class="w-full mt-4 bg-green-500 text-white p-3 rounded font-semibold hover:bg-green-600 transition-all">استفسار عبر واتساب</button>
+</section>
+
+<!-- مميزات المنتج -->
+<section class="bg-white p-6 rounded shadow mb-8">
+  <h2 class="text-3xl font-semibold mb-4">مزايا المنتج</h2>
+  <ul class="list-disc list-inside text-gray-700">
+    <li>توفير طاقة عالي</li>
+    <li>إضاءة قابلة للتعديل حسب الرغبة</li>
+    <li>متوفر بثلاثة مقاسات لتناسب جميع الاحتياجات</li>
+    <li>سهل التركيب والاستخدام</li>
+    <li>تصميم عصري يناسب جميع الديكورات</li>
+  </ul>
+</section>
+
+<!-- شهادات العملاء -->
+<section class="bg-white p-6 rounded shadow mb-8">
+  <h2 class="text-3xl font-semibold mb-4">آراء العملاء</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="p-4 border border-gray-300 rounded shadow card-hover flex flex-col items-center text-center customer-card">
+      <img src="1.jpeg" alt="عميل 1">
+      <p class="mt-2">"إضاءة رائعة وسهلة الاستخدام. أنصح بها!"</p>
+      <p class="font-semibold mt-1">أحمد محمد</p>
+    </div>
+    <div class="p-4 border border-gray-300 rounded shadow card-hover flex flex-col items-center text-center customer-card">
+      <img src="2.jpeg" alt="عميل 2">
+      <p class="mt-2">"تصميم عصري ومناسب لكل غرفتي. ممتاز!"</p>
+      <p class="font-semibold mt-1">سارة عبدالله</p>
+    </div>
+    <div class="p-4 border border-gray-300 rounded shadow card-hover flex flex-col items-center text-center customer-card">
+      <img src="3.jpeg" alt="عميل 3">
+      <p class="mt-2">"خدمة سريعة وجودة عالية. سعيد بالشراء!"</p>
+      <p class="font-semibold mt-1">محمد مصطفى</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-white p-6 rounded shadow mb-8">
+  <h2 class="text-3xl font-semibold mb-4">الأسئلة الشائعة</h2>
+  <div class="space-y-4">
+    <details class="p-4 border border-gray-300 rounded shadow card-hover transition-all">
+      <summary>هل المنتج يحتاج لتركيب متخصص؟</summary>
+      <p class="mt-2">لا، المنتج يأتي مع تعليمات سهلة ويمكن تركيبه بسهولة.</p>
+    </details>
+    <details class="p-4 border border-gray-300 rounded shadow card-hover transition-all">
+      <summary>هل يمكن تغيير المقاس بعد الطلب؟</summary>
+      <p class="mt-2">نعم، يمكن تعديل الطلب قبل الشحن حسب المتاح.</p>
+    </details>
+    <details class="p-4 border border-gray-300 rounded shadow card-hover transition-all">
+      <summary>هل المنتج موفر للطاقة؟</summary>
+      <p class="mt-2">نعم، يوفر استهلاك منخفض للطاقة مع إضاءة قوية.</p>
+    </details>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white p-6 rounded shadow text-center mb-8">
+  <p class="mb-2">© 2025 إنارة ذكية. جميع الحقوق محفوظة.</p>
+  <div class="flex justify-center gap-4">
+    <a href="#" class="text-blue-600 hover:underline transition-all">فيسبوك</a>
+    <a href="#" class="text-blue-500 hover:underline transition-all">إنستغرام</a>
+    <a href="#" class="text-green-600 hover:underline transition-all">واتساب</a>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  const sizeButtons = document.querySelectorAll('.size-btn');
+  const sizeDisplay = document.getElementById('sizeDisplay');
+  let selectedSize = 'صغير';
+  sizeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      selectedSize = btn.dataset.size;
+      sizeDisplay.textContent = selectedSize;
+    });
+  });
+
+  document.getElementById('orderForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const formData = new FormData(this);
+    const data = {
+      size: selectedSize,
+      name: formData.get('name'),
+      phone: formData.get('phone'),
+      city: formData.get('city'),
+      details: formData.get('details')
+    };
+    console.log('Order Data:', data);
+    alert('تم إرسال طلبك بنجاح!');
+    this.reset();
+  });
+
+  document.getElementById('whatsappBtn').addEventListener('click', function(){
+    const message = encodeURIComponent(`مرحبًا، أرغب بالاستفسار عن إنارة ذكية بمقاس: ${selectedSize}`);
+    window.open(`https://wa.me/201127471188?text=${message}`, '_blank');
+  });
+</script>
+
+</body>
+</html>
